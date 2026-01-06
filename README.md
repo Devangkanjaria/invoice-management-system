@@ -6,13 +6,10 @@ A full-stack application designed to streamline the creation, management, and tr
 
 ## 🚀 Features
 
-- **Dashboard:** Overview of total invoices, paid/unpaid status, and recent activity.
+- **Dashboard:** Overview of total invoices and recent activity.
 - **Invoice Creation:** Easily generate professional invoices with customizable fields.
 - **Client Management:** Store and manage client details for faster invoicing.
-- **PDF Generation:** Download invoices as professional PDF documents.
-- **Status Tracking:** Mark invoices as Paid, Pending, or Overdue.
-- **Responsive Design:** Fully functional on mobile, tablet, and desktop devices.
-
+-
 ## 🛠️ Tech Stack
 
 **Frontend:** React, Vite, CSS/Tailwind
