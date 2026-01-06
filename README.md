@@ -14,7 +14,7 @@ A full-stack application designed to streamline the creation, management, and tr
 
 **Frontend:** React, Vite, CSS/Tailwind
 **Backend:** Node.js, Express
-**Database:** [Your Database, e.g., MongoDB/PostgreSQL]
+**Database:** [MySQL]
 **Tools:** Git, NPM
 
 ## 📋 Prerequisites
