@@ -1,0 +1,32 @@
+  [
+    {
+      "id": "p-1",
+      "name": "Notebook",
+      "price": 50,
+      "description": "A5 ruled notebook, 200 pages — good for notes and records."
+    },
+    {
+      "id": "p-2",
+      "name": "Pen(blue)",
+      "price": 10,
+      "description": "Smooth ballpoint pen, blue ink, medium tip."
+    },
+    {
+      "id": "p-3",
+      "name": "Backpack",
+      "price": 200,
+      "description": "Durable backpack with multiple compartments, 20L capacity."
+    },
+    {
+      "id": "p-4",
+      "name": "Mouse",
+      "price": 250,
+      "description": "Optical wired mouse, ergonomic design, 1200 DPI."
+    },
+    {
+      "id": "p-5",
+      "name": "Keyboard",
+      "price": 200,
+      "description": "Compact membrane keyboard with quiet keys."
+    }
+  ]

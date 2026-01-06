@@ -1,0 +1,157 @@
+/* ================= PRODUCTS MODULE ================= */
+
+.products-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px;
+}
+
+/* ---------- TOP HEADER ---------- */
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #111827, #1f2937);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.products-header h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.products-header p {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: #d1d5db;
+}
+
+/* ---------- ACTION BUTTON ---------- */
+.products-header .action-btn {
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  background: #22c55e;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #022c22;
+  transition: all 0.25s ease;
+}
+
+.products-header .action-btn:hover {
+  background: #16a34a;
+  transform: translateY(-1px);
+}
+
+/* ---------- CARD ---------- */
+.products-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 22px;
+  margin-top: 22px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- TABLE ---------- */
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.products-table th {
+  text-align: left;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6b7280;
+  padding: 12px;
+}
+
+.products-table td {
+  padding: 14px 12px;
+  border-top: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.products-table img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+/* ---------- ACTION BUTTONS ---------- */
+.btn {
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn.view {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.btn.edit {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.btn.delete {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+/* ---------- FORM ---------- */
+.products-form input,
+.products-form textarea,
+.products-form select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.products-form textarea {
+  resize: none;
+  height: 90px;
+}
+
+.products-form label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  margin-top: 16px;
+  display: block;
+}
+
+/* ---------- FORM ACTION ---------- */
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* ---------- EMPTY STATE ---------- */
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #6b7280;
+  font-size: 15px;
+}

@@ -1,0 +1,736 @@
+/* ===== PAGE BACKGROUND ===== */
+/* --- Modern Theme Variables --- */
+:root {
+  --bg-dark: #0f172a;
+  --card-bg: rgba(30, 41, 59, 0.7);
+  --accent-green: #10b981;
+  --accent-purple: #8b5cf6;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Specific override for Grand Total section to ensure black text */
+.summary-line.total-line,
+.summary-line.total-line strong,
+.summary-line.total-line span {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important; /* Fix for gradients */
+    opacity: 1 !important;
+}
+
+/* Also ensure the background of the summary area is light enough to read black text */
+.summary-card {
+    background: #fcfcfc !important;
+    border: 1px solid #eee !important;
+}
+.view-page-wrapper {
+  background: #0f172a; /* Dark background like your dashboard */
+  padding: 40px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+/* --- Modern Theme Variables (Shared) --- */
+:root {
+  --bg-dark: #0f172a;
+  --card-bg: rgba(30, 41, 59, 0.6);
+  --accent-green: #10b981;
+  --accent-purple: #8b5cf6;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* 1. Force all form input and select text to black */
+.input-field, 
+.main-input, 
+select.input-field, 
+textarea.input-field,
+.item-grid-row input,
+.item-grid-row select {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    border: 1px solid #ccc !important;
+}
+
+/* 2. Fix for the Summary section labels (Subtotal, Total, etc.) */
+/* Add this to invoice.css */
+.summary-card, 
+.summary-line, 
+.summary-line span, 
+.summary-line strong, 
+.total-line strong {
+    color: #000000 !important; /* !important ensures it overrides dark theme defaults */
+}
+
+/* Ensure the input inside the summary is also black */
+.summary-card input {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    border: 1px solid #ccc !important;
+}
+/* 3. Ensure dropdown options list has black text */
+select.input-field option {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+}
+
+/* 4. Fix labels and muted text */
+label.muted, .section-title, .item-grid-header div {
+    color: #333333 !important;
+}
+/* Ensure the text inside selects and inputs is always visible */
+.input-field, 
+select.input-field,
+.item-grid-row select {
+    color: #ffffff !important; /* Force white text for dark theme */
+    background-color: #1a1d21; /* Match your card background */
+    border: 1px solid #333;
+}
+
+/* Fix for the dropdown options specifically */
+select.input-field option {
+    background-color: #1a1d21;
+    color: #ffffff;
+}
+
+/* If the background of the form is white, use this instead: */
+/*
+.input-field {
+    color: #333333 !important;
+    background-color: #ffffff !important;
+}
+*/
+
+/* --- Shared Page Wrapper --- */
+.app-container, .form-page, .view-page-wrapper {
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
+  color: var(--text-main);
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- The Modern Glass Card (Used by Edit and View) --- */
+.form-card, .invoice-display-card {
+  width: 100%;
+  max-width: 900px;
+  background: var(--card-bg) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 40px;
+  color: var(--text-main) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Form Visibility Fixes --- */
+.form-card h2, .invoice-display-card h2 {
+  color: var(--accent-green) !important;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-card label, .form-card strong, .invoice-display-card strong {
+  color: var(--text-main) !important;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-card input, .form-card textarea, .form-card select {
+  background: rgba(15, 23, 42, 0.8) !important;
+  border: 1px solid var(--glass-border) !important;
+  color: white !important;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+/* --- Table Visibility Fixes (View Mode) --- */
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.items-table th {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--accent-purple) !important;
+  text-align: left;
+  padding: 15px;
+  border-bottom: 2px solid var(--glass-border);
+}
+
+.items-table td {
+  padding: 15px;
+  border-bottom: 1px solid var(--glass-border);
+  color: var(--text-main) !important;
+}
+
+/* --- Status & Totals --- */
+.totals-section {
+  margin-top: 2rem;
+  text-align: right;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+}
+
+.final-amount {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent-green) !important;
+}
+
+/* --- Unified Buttons --- */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-green), #059669);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid var(--glass-border);
+  padding: 12px 25px;
+  border-radius: 10px;
+}
+
+.invoice-display-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+  padding: 40px;
+  color: #0a0a0a; /* Ensuring dark text */
+}
+
+/* Fix for the invisible table header */
+.items-table thead tr {
+  background: #f8fafc;
+  color: #0f172a;
+}
+/* --- Global Layout --- */
+.app-container {
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
+  color: var(--text-main);
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* --- Header Styling --- */
+header.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 1rem;
+}
+
+.company {
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--accent-green);
+  font-size: 0.9rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* --- Action Area (Add Button) --- */
+.add-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card-bg);
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+  margin-bottom: 2rem;
+}
+
+.add-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.plus-btn {
+  background: linear-gradient(135deg, var(--accent-green), #059669);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.plus-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+}
+
+/* --- List & Cards --- */
+.list {
+  display: grid;
+  gap: 1rem;
+}
+
+.task-card {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  align-items: center;
+  background: var(--card-bg);
+  padding: 1.2rem 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s ease;
+}
+
+.task-card:hover {
+  border-color: var(--accent-purple);
+  background: rgba(30, 41, 59, 0.9);
+  transform: translateX(10px);
+}
+
+.invoice-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.muted {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.invoice-amount {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-green);
+}
+
+/* --- Buttons --- */
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+button.small {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid var(--glass-border);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+button.small:hover {
+  background: white;
+  color: black;
+}
+
+button.warning:hover {
+  background: var(--warning);
+  color: white;
+}
+
+button.danger:hover {
+  background: var(--danger);
+  color: white;
+}
+
+/* --- Empty/Loading State --- */
+.empty {
+  text-align: center;
+  padding: 4rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+.form-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f4f7fb, #eef2f7);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+/* ===== CARD ===== */
+.form-card {
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 28px 32px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.form-card h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* ===== FORM ELEMENTS ===== */
+.form-card input,
+.form-card textarea,
+.form-card select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  background: #fafafa;
+}
+
+.form-card input:focus,
+.form-card textarea:focus,
+.form-card select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.15);
+  background: #fff;
+}
+
+.form-card textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* ===== ERRORS ===== */
+.error {
+  color: #dc2626;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.error-box {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+
+/* ===== ITEMS ===== */
+.item-row {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr 1fr auto;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.item-row input,
+.item-row select {
+  font-size: 13px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #fff;
+}
+
+.btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(79, 70, 229, 0.3);
+}
+
+.btn.ghost {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.btn.ghost:hover {
+  background: #e5e7eb;
+}
+
+.small.danger {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+.small.danger:hover {
+  background: #fecaca;
+}
+
+/* ===== SUMMARY ===== */
+.summary {
+  margin-top: 20px;
+  padding: 14px;
+  background: #f9fafb;
+  border-radius: 10px;
+  text-align: right;
+  font-size: 14px;
+}
+
+.summary strong {
+  color: #111827;
+}
+
+/* ===== HEADINGS ===== */
+h3 {
+  margin-top: 24px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #374151;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .item-row {
+    grid-template-columns: 1fr;
+  }
+
+  .summary {
+    text-align: left;
+  }
+}
+
+
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.customer-info {
+  margin-top: 12px;
+}
+
+.items-table {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.totals {
+  text-align: right;
+  margin-top: 12px;
+}
+
+.totals .final {
+  font-size: 18px;
+  margin-top: 6px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Base input styling */
+.input-field {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  transition: border-color 0.2s;
+}
+
+/* Red border when validation fails */
+.input-field.is-invalid {
+  border-color: #dc3545 !important; /* Red color */
+  background-color: #fff8f8; /* Light red tint */
+}
+
+/* Red focus ring for invalid fields */
+.input-field.is-invalid:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+/* Error text styling */
+.error-text {
+  color: #dc3545;
+  font-size: 0.75rem;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Styling for the top error box */
+.error-box {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #f5c6cb;
+  margin-bottom: 20px;
+}
+
+/* Ensure the Header and Rows share the EXACT same grid definition */
+.item-grid-header, 
+.item-grid-row {
+  display: grid;
+  /* 1.5fr (Product) | 2fr (Description) | 0.7fr (Qty) | 1fr (Price) | 1fr (Amount) | 40px (Delete) */
+  grid-template-columns: 1.5fr 2fr 0.7fr 1fr 1fr 40px;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 0;
+}
+
+/* Header specific styling */
+.item-grid-header {
+  border-bottom: 2px solid #eee;
+  font-weight: 600;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Row specific styling */
+.item-grid-row {
+  border-bottom: 1px solid #f8f9fa;
+}
+
+/* Fix for the sub-grid in customer info (Mobile and Address) */
+.customer-sub-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* Poster Layout */
+.poster-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f1a 100%);
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+.poster-card {
+  text-align: center;
+  max-width: 800px;
+  padding: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.status-badge {
+  display: inline-block;
+  background: #00ff88;
+  color: #000;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+}
+
+.poster-card h1 {
+  font-size: 3.5rem;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #fff, #888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-bottom: 40px;
+}
+
+.tech-stack {
+  margin-bottom: 40px;
+  font-size: 0.9rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.btn-primary-large {
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 16px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-large:hover {
+  background: #00ff88;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 255, 136, 0.2);
+}
+
+.footer-note {
+  margin-top: 50px;
+  font-size: 0.8rem;
+  color: #444;
+}
+
